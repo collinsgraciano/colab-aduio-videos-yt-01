@@ -36,6 +36,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
 from PIL import Image
+from psycopg import sql
 
 from . import config as cfg
 from .runtime import log, write_json_file, read_json_file

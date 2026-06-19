@@ -17,6 +17,8 @@ import re
 import datetime as dt_module
 from urllib.parse import urlparse, parse_qs
 
+from psycopg import sql
+
 from . import config as cfg
 from .runtime import (
     log,
