@@ -57,7 +57,6 @@ from .youtube import (
     _build_existing_video_match_from_row,
     _apply_video_match_to_split_part,
     _reset_split_part_upload_state,
-    _is_nonempty_local_file as _cover_is_nonempty_local_file,
 )
 from .cover import (
     _2K_IMAGE_SIZES,
