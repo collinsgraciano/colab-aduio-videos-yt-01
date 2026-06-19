@@ -2264,4 +2264,4 @@ def finalize_book_result(result, book_dir, book_record=None):
         log.warning("单书结果写入失败: %s", e)
 
     log.info("🏁 本书《%s》全程线走完。状态：%s", result.book_name, "✅" if result.success else "❌")
-    return result"
+    return result
