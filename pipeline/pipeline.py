@@ -535,12 +535,8 @@ def sync_result_from_split_state(result, state, split_plan):
 
     for part_plan in split_plan.get("parts", []):
         part_state = get_split_part_state(state, part_plan["part_index"]) or {}
-        _reconcile_from_state = getattr(sys_split_compat_module(), "_reconcile_split_part_state", lambda x: False)
-        try:
-            from .state import _reconcile_split_part_state as _rc
-            _rc(part_state)
-        except Exception:
-            pass
+        from .state import _reconcile_split_part_state
+        _reconcile_split_part_state(part_state)
         result.part_results.append(build_part_result_record(part_plan, part_state))
 
         if _split_part_is_completed(part_state):
