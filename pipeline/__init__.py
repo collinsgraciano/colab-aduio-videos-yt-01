@@ -39,6 +39,10 @@ from . import podcast
 # ── Layer 4: 主流程编排 ──
 from . import pipeline
 
+# ── 安装 podcast monkey-patch：覆盖 process_standard_book / sync_split_playlist /
+#    sync_result_from_split_state / finalize_book_result 以接入 Podcast Show 同步 ──
+podcast._podcast_install_monkey_patches()
+
 # ── 公开 API ──
 from .pipeline import run_pipeline
 from .config import apply_runtime_config
